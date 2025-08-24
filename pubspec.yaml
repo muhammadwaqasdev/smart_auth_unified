@@ -1,0 +1,52 @@
+name: smart_auth_unified
+description: "Unified authentication library for Flutter/Dart supporting multiple providers with a single API. (smart_auth_unified unified)"
+version: 0.0.1
+homepage: https://github.com/muhammadwaqasdev/smart_auth_unified
+repository: https://github.com/muhammadwaqasdev/smart_auth_unified
+issue_tracker: https://github.com/muhammadwaqasdev/smart_auth_unified/issues
+topics:
+  - authentication
+  - oauth
+  - login
+  - jwt
+  - firebase
+  - cognito
+  - supabase
+  - auth0
+  - oidc
+  - saml
+  - biometric
+  - identity
+  - flutter
+  - dart
+  - cross-platform
+
+environment:
+  sdk: ^3.8.1
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  meta: ^1.12.0
+  collection: ^1.18.0
+  flutter_secure_storage: ^9.0.0
+  encrypt: ^5.0.3
+  google_sign_in: ">=6.2.1 <8.0.0"
+  local_auth: ^2.1.8
+  sign_in_with_apple: ">=6.1.0 <8.0.0"
+  flutter_facebook_auth: ^7.0.1
+  flutter_web_auth_2: ^4.0.0
+  http: ^1.2.2
+  twitter_login: ^4.4.2
+  firebase_core: ">=3.6.0 <5.0.0"
+  firebase_auth: ">=5.3.2 <7.0.0"
+  supabase_flutter: ^2.6.0
+  flutter_appauth: ">=6.0.4 <10.0.0"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
