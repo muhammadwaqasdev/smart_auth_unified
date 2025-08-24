@@ -175,11 +175,11 @@ Quick index:
 
 ### Google
 
-#### Android
+#### Google Android
 - Create OAuth client in Google Cloud for Android
 - Add SHA-1/SHA-256 fingerprints
 
-#### iOS
+#### Google iOS
 - Create iOS OAuth client; add reversed client ID in URL Schemes
 
 Info.plist (URL Types) example:
@@ -195,7 +195,7 @@ Info.plist (URL Types) example:
 </array>
 ```
 
-#### Use
+#### Google Use
 ```dart
 await auth.registerProvider(GoogleAuthProvider());
 final session = await auth.signIn(provider: AuthProvider.google);
@@ -203,10 +203,10 @@ final session = await auth.signIn(provider: AuthProvider.google);
 
 ### Apple
 
-#### iOS
+#### Apple iOS
 - Enable “Sign in with Apple” capability in target settings
 
-#### Use
+#### Apple Use
 ```dart
 await auth.registerProvider(AppleAuthProvider());
 final session = await auth.signIn(provider: AuthProvider.apple);
@@ -214,7 +214,7 @@ final session = await auth.signIn(provider: AuthProvider.apple);
 
 ### Facebook
 
-#### Android
+#### Facebook Android
 `android/app/src/main/res/values/strings.xml`
 ```xml
 <resources>
@@ -230,7 +230,7 @@ AndroidManifest (application):
 <provider android:authorities="com.facebook.app.FacebookContentProvider${applicationId}" android:name="com.facebook.FacebookContentProvider" android:exported="true" />
 ```
 
-#### iOS
+#### Facebook iOS
 Info.plist:
 ```xml
 <key>CFBundleURLTypes</key>
@@ -250,7 +250,7 @@ Info.plist:
 </array>
 ```
 
-#### Use
+#### Facebook Use
 ```dart
 await auth.registerProvider(FacebookAuthProvider());
 final session = await auth.signIn(provider: AuthProvider.facebook);
@@ -258,14 +258,14 @@ final session = await auth.signIn(provider: AuthProvider.facebook);
 
 ### GitHub (OAuth via web)
 
-#### Console
+#### GitHub Console
 - Create an OAuth App and set callback to `your.app://callback`
 
-#### App setup
+#### GitHub App setup
 - iOS: add `your.app` scheme in URL Types
 - Android: add intent filter if needed
 
-#### Use
+#### GitHub Use
 ```dart
 await auth.registerProvider(GitHubAuthProvider(
 clientId: 'GITHUB_CLIENT_ID',
@@ -277,13 +277,13 @@ final session = await auth.signIn(provider: AuthProvider.github);
 
 ### LinkedIn (OAuth via web)
 
-#### Console
+#### LinkedIn Console
 - Create app; set redirect URI
 
-#### App setup
+#### LinkedIn App setup
 - Add URL scheme for your redirect
 
-#### Use
+#### LinkedIn Use
 ```dart
 await auth.registerProvider(LinkedInAuthProvider(
 clientId: 'LINKEDIN_CLIENT_ID',
@@ -295,13 +295,13 @@ final session = await auth.signIn(provider: AuthProvider.linkedin);
 
 ### Twitter/X
 
-#### Console
+#### Twitter Console
 - Create developer app; set callback to `your.app://callback`
 
-#### App setup
+#### Twitter App setup
 - iOS URL scheme; Android intent filter if needed
 
-#### Use
+#### Twitter Use
 ```dart
 await auth.registerProvider(TwitterAuthProvider(
 apiKey: 'TWITTER_API_KEY',
@@ -313,11 +313,11 @@ final session = await auth.signIn(provider: AuthProvider.twitter);
 
 ### Firebase (adapter; dynamic)
 
-#### Enable providers
+#### Firebase Enable providers
 - In Firebase Console, enable Google/Apple/GitHub/Twitter/etc.
 - Use `firebase_auth` (and provider plugins/FirebaseUI) for sign-in
 
-#### Use
+#### Firebase Use
 ```dart
 await auth.registerProvider(FirebaseAuthProvider());
 final session = await auth.signIn(provider: AuthProvider.firebase);
@@ -325,10 +325,10 @@ final session = await auth.signIn(provider: AuthProvider.firebase);
 
 ### Supabase (adapter; dynamic)
 
-#### Enable providers
+#### Supabase Enable providers
 - In Supabase Dashboard, enable providers and configure redirect URL
 
-#### Use
+#### Supabase Use
 ```dart
 await auth.registerProvider(SupabaseAuthProvider());
 final session = await auth.signIn(provider: AuthProvider.supabase);
@@ -336,10 +336,10 @@ final session = await auth.signIn(provider: AuthProvider.supabase);
 
 ### Cognito (OIDC via AppAuth)
 
-#### Console
+#### Cognito Console
 - Create a User Pool app client (no secret); set hosted UI domain and redirect URL
 
-#### Use
+#### Cognito Use
 ```dart
 await auth.registerProvider(CognitoAuthProvider(
 clientId: 'COGNITO_CLIENT_ID',
@@ -352,10 +352,10 @@ await auth.refresh();
 
 ### OIDC (Auth0/Okta/Azure AD/Keycloak)
 
-#### Console
+#### OIDC Console
 - Create native app; set redirect URI `your.app://callback`; copy discovery URL
 
-#### Use
+#### OIDC Use
 ```dart
 await auth.registerProvider(OidcAuthProvider(
 clientId: 'OIDC_CLIENT_ID',
@@ -367,10 +367,10 @@ final session = await auth.signIn(provider: AuthProvider.oidc);
 
 ### SAML (backend ACS)
 
-#### Backend
+#### SAML Backend
 - Implement SAML initiation and ACS on your server; redirect back to app scheme with token
 
-#### Use
+#### SAML Use
 ```dart
 await auth.registerProvider(SamlAuthProvider(
 authUrl: 'https://your-backend.example.com/auth/saml/start',
@@ -381,11 +381,10 @@ final session = await auth.signIn(provider: AuthProvider.saml);
 
 ### LDAP (backend)
 
-#### Backend
-- Expose an endpoint to bind/authe
-- nticate and issue JWT
+#### LDAP Backend
+- Expose an endpoint to bind/authenticate and issue JWT
 
-#### Use
+#### LDAP Use
 ```dart
 await auth.registerProvider(LdapAuthProvider(signInCallback: (username, password) async {
 // call your backend and return a JwtSession
