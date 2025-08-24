@@ -7,19 +7,9 @@ issue_tracker: https://github.com/muhammadwaqasdev/smart_auth_unified/issues
 topics:
   - authentication
   - oauth
-  - login
   - jwt
-  - firebase
-  - cognito
-  - supabase
-  - auth0
-  - oidc
-  - saml
   - biometric
   - identity
-  - flutter
-  - dart
-  - cross-platform
 
 environment:
   sdk: ^3.8.1
